@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NVB Handmade — Product Catalog Builder & PDF Generator</title>
+    <meta name="description" content="Design, edit, and print a beautiful PDF product catalog for NVB Handmade crafts. Create pages, set custom prices, and print instantly.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400;1,600&family=Poppins:wght@300;400;500;600;700;800&family=Dancing+Script:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Link to custom stylesheets -->
+    <link rel="stylesheet" href="catalog.css">
+</head>
+
+<body>
+
+    <!-- Floating Hearts Background -->
+    <div class="floating-hearts" aria-hidden="true">
+        <span class="heart" style="--i:1">♥</span>
+        <span class="heart" style="--i:2">✦</span>
+        <span class="heart" style="--i:3">✧</span>
+        <span class="heart" style="--i:4">♥</span>
+        <span class="heart" style="--i:5">✦</span>
+        <span class="heart" style="--i:6">♥</span>
+        <span class="heart" style="--i:7">✧</span>
+        <span class="heart" style="--i:8">♥</span>
+        <span class="heart" style="--i:9">✦</span>
+        <span class="heart" style="--i:10">♥</span>
+    </div>
+
+    <div class="app-container">
+        
+        <!-- ================= SIDEBAR EDITOR PANEL ================= -->
+        <aside class="editor-sidebar">
+            
+            <!-- Sidebar Header -->
+            <div class="editor-header">
+                <h1>
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="color: var(--pink-primary)">
+                        <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                        <polyline points="14 2 14 8 20 8"></polyline>
+                        <line x1="16" y1="13" x2="8" y2="13"></line>
+                        <line x1="16" y1="17" x2="8" y2="17"></line>
+                        <polyline points="10 9 9 9 8 9"></polyline>
+                    </svg>
+                    Catalog Builder
+                </h1>
+                <a href="index.html" class="back-btn">
+                    ← Back to Site
+                </a>
+            </div>
+
+            <!-- Scrollable Content -->
+            <div class="editor-content">
+                
+                <!-- Section 1: Catalog Details -->
+                <div class="section-card" style="display: none;">
+                    <h2 class="section-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 20h9"></path>
+                            <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"></path>
+                        </svg>
+                        1. Catalog Info
+                    </h2>
+                    <div class="form-group">
+                        <label for="catalogTitle">Brand Title</label>
+                        <input type="text" id="catalogTitle" class="form-control" placeholder="NVB Handmade">
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogSubtitle">Subtitle / Tagline</label>
+                        <input type="text" id="catalogSubtitle" class="form-control" placeholder="Exclusive Handmade Collection">
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogWhatsapp">WhatsApp No</label>
+                        <input type="text" id="catalogWhatsapp" class="form-control" placeholder="+91 90232 43011">
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogInstagram">Instagram Handle</label>
+                        <input type="text" id="catalogInstagram" class="form-control" placeholder="@nvb_handmade">
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogWebsite">Website URL</label>
+                        <input type="text" id="catalogWebsite" class="form-control" placeholder="https://www.nvbhandmade.store/">
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogFooter">Footer Copyright Text</label>
+                        <textarea id="catalogFooter" class="form-control" placeholder="Made with love | Shipping Pan India"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="catalogBackCoverMsg">Back Cover Thank You Message</label>
+                        <textarea id="catalogBackCoverMsg" class="form-control" rows="2" placeholder="Thank you for exploring our handmade creations!"></textarea>
+                    </div>
+                </div>
+
+                <!-- Section 2: Layout & Theme -->
+                <div class="section-card">
+                    <h2 class="section-title">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+                            <line x1="9" y1="3" x2="9" y2="21"></line>
+                            <line x1="15" y1="3" x2="15" y2="21"></line>
+                            <line x1="3" y1="9" x2="21" y2="9"></line>
+                            <line x1="3" y1="15" x2="21" y2="15"></line>
+                        </svg>
+                        2. Style & Format
+                    </h2>
+                    
+                    <!-- Theme Picker -->
+                    <div class="form-group">
+                        <label>Color Theme</label>
+                        <div class="theme-picker">
+                            <div class="theme-chip theme-chip-pink active" data-theme="pink">Pink Blush</div>
+                            <div class="theme-chip theme-chip-purple" data-theme="purple">Lavender</div>
+                            <div class="theme-chip theme-chip-gold" data-theme="gold">Royal Gold</div>
+                            <div class="theme-chip theme-chip-dark" data-theme="dark">Charcoal</div>
+                        </div>
+                    </div>
+
+                    <!-- Page Orientation Picker -->
+                    <div class="form-group">
+                        <label>Page Orientation</label>
+                        <div class="orientation-picker">
+                            <div class="orientation-chip active" data-orientation="portrait">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="5" y="2" width="14" height="20" rx="2"></rect>
+                                </svg>
+                                Portrait
+                            </div>
+                            <div class="orientation-chip" data-orientation="landscape">
+                                <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="5" width="20" height="14" rx="2"></rect>
+                                </svg>
+                                Landscape
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Items Per Page Picker -->
+                    <div class="form-group">
+                        <label>Products Per Page</label>
+                        <div class="layout-picker">
+                            <div class="layout-option" data-layout="1">1</div>
+                            <div class="layout-option" data-layout="2">2</div>
+                            <div class="layout-option active" data-layout="4">4 (2x2)</div>
+                            <div class="layout-option" data-layout="6">6 (2x3)</div>
+                            <div class="layout-option" data-layout="8">8 (2x4)</div>
+                            <div class="layout-option" data-layout="9">9 (3x3)</div>
+                        </div>
+                    </div>
+
+                    <!-- Toggles -->
+                    <div class="form-group" style="margin-top: 15px;">
+                        <div class="toggle-group">
+                            <span class="toggle-label">Include Table of Contents</span>
+                            <label class="switch">
+                                <input type="checkbox" id="toggleTOC" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-group">
+                            <span class="toggle-label">Include Thank You Page</span>
+                            <label class="switch">
+                                <input type="checkbox" id="toggleThankYou" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-group">
+                            <span class="toggle-label">Add Sparkling Backgrounds</span>
+                            <label class="switch">
+                                <input type="checkbox" id="toggleSparkles" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-group">
+                            <span class="toggle-label">Display Prices</span>
+                            <label class="switch">
+                                <input type="checkbox" id="togglePrices" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                        <div class="toggle-group">
+                            <span class="toggle-label">Show SKU Codes</span>
+                            <label class="switch">
+                                <input type="checkbox" id="toggleSKUs" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section 3: Product List Manager -->
+                <div class="section-card">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                        <h2 class="section-title" style="margin-bottom: 0; border: none; padding: 0;">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <rect x="3" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="3" width="7" height="7"></rect>
+                                <rect x="14" y="14" width="7" height="7"></rect>
+                                <rect x="3" y="14" width="7" height="7"></rect>
+                            </svg>
+                            3. Products List
+                        </h2>
+                        <button id="addProductBtn" class="btn btn-secondary" style="display: none; width: auto; padding: 4px 10px; font-size: 0.75rem;">
+                            + Add New
+                        </button>
+                    </div>
+                    
+                    <div class="product-manager-list" id="productManagerList">
+                        <!-- Rendered dynamically in catalog.js -->
+                    </div>
+
+                    <div style="display: none; margin-top: 15px; text-align: center;">
+                        <button id="resetBtn" class="btn btn-secondary" style="display: inline-flex; width: auto; font-size: 0.75rem; padding: 6px 12px; border-color: #fca5a5; color: #ef4444; background: #fef2f2;">
+                            Reset to Original List
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Section 4: Dynamic Details Form -->
+                <div class="edit-details-panel" id="editDetailsPanel" style="display: none;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
+                        <h3 style="font-size: 0.85rem; font-weight: 700; color: var(--pink-dark);">Edit Selected Details</h3>
+                        <button id="deleteProductBtn" class="btn-icon delete-btn" title="Delete Product Card">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <polyline points="3 6 5 6 21 6"></polyline>
+                                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path>
+                                <line x1="10" y1="11" x2="10" y2="17"></line>
+                                <line x1="14" y1="11" x2="14" y2="17"></line>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="form-group">
+                        <label for="editName">Product Title</label>
+                        <input type="text" id="editName" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="editCategory">Category</label>
+                        <input type="text" id="editCategory" class="form-control">
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px;">
+                        <div class="form-group">
+                            <label for="editPrice">Price (₹)</label>
+                            <input type="text" id="editPrice" class="form-control">
+                        </div>
+                        <div class="form-group">
+                            <label for="editSku">SKU Code</label>
+                            <input type="text" id="editSku" class="form-control">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="editDesc">Description</label>
+                        <textarea id="editDesc" class="form-control" rows="2"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <div class="toggle-group" style="padding: 0;">
+                            <span class="toggle-label" style="font-size: 0.8rem; font-weight: 550;">Include in Catalog</span>
+                            <label class="switch">
+                                <input type="checkbox" id="editEnabled" checked>
+                                <span class="slider"></span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Sidebar Footer Actions -->
+            <div class="editor-actions">
+                <button id="printBtn" class="btn btn-primary">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 6 2 18 2 18 9"></polyline>
+                        <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path>
+                        <rect x="6" y="14" width="12" height="8"></rect>
+                    </svg>
+                    Save PDF / Print Catalog
+                </button>
+            </div>
+
+        </aside>
+
+        <!-- ================= RIGHT SHEET CONTAINER (PREVIEW) ================= -->
+        <main class="preview-pane">
+            
+            <!-- Sticky Controls Toolbar -->
+            <div class="preview-toolbar">
+                <span>A4 Preview Zoom: <strong id="zoomPercentage">75%</strong></span>
+                <div class="zoom-control">
+                    <button class="zoom-btn" id="zoomOut" title="Zoom Out">−</button>
+                    <button class="zoom-btn" id="zoomReset" title="Reset Zoom">⟲</button>
+                    <button class="zoom-btn" id="zoomIn" title="Zoom In">+</button>
+                </div>
+            </div>
+
+            <!-- Page Previews Canvas -->
+            <div class="catalog-container" id="catalogContainer">
+                <!-- Dynamically generated A4 pages inside catalog.js -->
+            </div>
+
+        </main>
+
+    </div>
+
+    <!-- ================= PRINT DIALOG HELP DIALOG MODAL ================= -->
+    <div class="modal-overlay" id="printModal">
+        <div class="modal-container">
+            <h3 class="modal-title">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#ec4899" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                </svg>
+                Optimal PDF Export Settings
+            </h3>
+            <div class="modal-body">
+                <p>To export a stunning, pixel-perfect PDF, please configure your browser print dialog settings as follows:</p>
+                <ol>
+                    <li>Destination: <strong>Save as PDF</strong> (or Microsoft Print to PDF)</li>
+                    <li>Layout: <strong>Portrait</strong></li>
+                    <li>Paper Size: <strong>A4</strong></li>
+                    <li>Margins: <strong>None</strong> (critical to align custom headers & footers)</li>
+                    <li>Scale: <strong>Default</strong> (or 100%)</li>
+                    <li>Options: <strong>Check "Background graphics"</strong> (crucial for printing colors & patterns)</li>
+                    <li>Options: <strong>Uncheck "Headers and footers"</strong> (removes browser page dates/file paths)</li>
+                </ol>
+                <p style="background: #fff5f8; padding: 10px; border-radius: 8px; border: 1px solid #fed7e2; color: #db2777; font-weight: 500;">
+                    💡 Make sure "Background graphics" is enabled, otherwise images and colored headers will not print!
+                </p>
+            </div>
+            <div class="modal-footer" style="margin-top: 20px; gap: 10px;">
+                <button class="btn btn-secondary" id="closeModalBtn" style="width: auto; padding: 8px 16px;">Cancel</button>
+                <button class="btn btn-primary" id="proceedPrintBtn" style="width: auto; padding: 8px 20px; background: var(--pink-primary);">Proceed to Print</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Toast Banner -->
+    <div class="toast" id="toast">Changes saved successfully!</div>
+
+    <!-- Inject logic -->
+    <script src="catalog.js"></script>
+</body>
+
+</html>
